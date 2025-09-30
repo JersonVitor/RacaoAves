@@ -10,7 +10,8 @@ import java.util.Date
     foreignKeys = [ForeignKey(
         entity = Lote::class,
         parentColumns = arrayOf("id"),
-        childColumns = arrayOf("loteId")
+        childColumns = arrayOf("loteId"),
+        onDelete = ForeignKey.CASCADE
     )]
 )
 data class Racao(
