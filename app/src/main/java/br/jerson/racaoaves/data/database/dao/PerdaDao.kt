@@ -22,5 +22,5 @@ interface PerdaDao {
     suspend fun deletePerda(perda: Perda)
 
     @Query("SELECT * FROM perda WHERE loteId = :loteId ORDER BY data DESC")
-    fun getPerdaByLoteId(loteId: Int):Flow<List<Int>>
+    fun getPerdaByLoteId(loteId: Int):Flow<List<Perda>>
 }

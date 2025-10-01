@@ -1,23 +1,26 @@
 package br.jerson.racaoaves.data.repository
 
+import br.jerson.racaoaves.data.database.dao.LoteDao
 import br.jerson.racaoaves.domain.model.Lote
 import br.jerson.racaoaves.domain.repository.LoteRepository
 import kotlinx.coroutines.flow.Flow
 
-class LoteRepositoryImpl(): LoteRepository{
+class LoteRepositoryImpl(
+   private val loteDao: LoteDao
+): LoteRepository{
     override suspend fun insertLote(lote: Lote) {
-        TODO("Not yet implemented")
+        loteDao.insertLote(lote)
     }
 
     override suspend fun updateLote(lote: Lote) {
-        TODO("Not yet implemented")
+        loteDao.updateLote(lote)
     }
 
     override suspend fun deleteLote(lote: Lote) {
-        TODO("Not yet implemented")
+        loteDao.deleteLote(lote)
     }
 
     override fun getLoteById(id: Int): Flow<Lote> {
-        TODO("Not yet implemented")
+        return loteDao.getLoteById(id)
     }
 }

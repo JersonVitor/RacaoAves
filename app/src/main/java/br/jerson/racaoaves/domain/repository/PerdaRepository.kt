@@ -8,5 +8,5 @@ interface PerdaRepository {
     suspend fun insertPerda(perda: Perda)
     suspend fun updatePerda(perda: Perda)
     suspend fun deletePerda(perda: Perda)
-    fun getPerdaByLoteId(loteId: Int): Flow<List<Int>>
+    fun getPerdaByLoteId(loteId: Int): Flow<List<Perda>>
 }

@@ -13,6 +13,7 @@ object Configuracao{
     val CONSUMO_INICIAL = intPreferencesKey("consumo_inicial")
     val CONSUMO_CRESCIMENTO = intPreferencesKey("consumo_crescimento")
     val CONSUMO_FINAL = intPreferencesKey("consumo_final")
+    val QTD_ALIMENTACAO_DIA = intPreferencesKey("qtd_alimentacao_dia")
     val IDADE_INICIO_CRESCIMENTO = intPreferencesKey("idade_inicio_cres")
     val IDADE_INICIO_TERMINACAO = intPreferencesKey("idade_inicio_term")
 }

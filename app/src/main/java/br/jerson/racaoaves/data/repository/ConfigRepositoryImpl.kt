@@ -20,6 +20,10 @@ class ConfigRepositoryImpl(
     override val consumoFinal: Flow<Int> = context.configDataStore.data.map {
         it[Configuracao.CONSUMO_FINAL]?: 60
     }
+
+    override val qtdAlimentacaoDia: Flow<Int> = context.configDataStore.data.map {
+        it[Configuracao.QTD_ALIMENTACAO_DIA]?: 1
+    }
     override val idadeInicialCrescimento: Flow<Int> = context.configDataStore.data.map {
         it[Configuracao.IDADE_INICIO_CRESCIMENTO] ?: 21
     }
@@ -43,6 +47,13 @@ class ConfigRepositoryImpl(
             it[Configuracao.CONSUMO_FINAL] = consumo
         }
     }
+
+    override suspend fun setqtdAlimentacaoDia(qtd: Int) {
+        context.configDataStore.edit {
+            it[Configuracao.QTD_ALIMENTACAO_DIA] = qtd
+        }
+    }
+
     override suspend fun setIdadeInicialCrescimento(consumo: Int){
         context.configDataStore.edit {
             it[Configuracao.IDADE_INICIO_CRESCIMENTO] = consumo
